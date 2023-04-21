@@ -11,11 +11,13 @@ import { DarkModeContext } from "../../context/darkModeContext";
 import { AuthContext } from "../../context/authContext";
 import Weather from "../weather/Weather"
 import Clock from "../clock/Clock"
+import DropdownMenu from "../ProfileMenu"
 
 
 const Navbar = () => {
   const { toggle, darkMode } = useContext(DarkModeContext);
   const { currentUser } = useContext(AuthContext);
+  
 
   return (
     <div className="navbar">
@@ -42,12 +44,8 @@ const Navbar = () => {
         <EmailOutlinedIcon />
         <NotificationsOutlinedIcon />
         <div className="user">
-
-          <img
-            src={currentUser.profilePic}
-            alt=""
-          />
-          <span>{currentUser.name}</span>
+          
+          <DropdownMenu/>
         </div>
       </div>
     </div>

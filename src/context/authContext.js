@@ -10,16 +10,18 @@ export const AuthContextProvider = ({ children }) => {
   const login = () => {
     //TO DO
     setCurrentUser({
-      id: 1,
-      name: "John Doe",
+      id: 2,
+      name: "AnhPhuong1",
       profilePic:
-        "https://images.pexels.com/photos/3228727/pexels-photo-3228727.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        "https://scontent.fhan2-3.fna.fbcdn.net/v/t39.30808-1/277109173_1887746408083196_2354229315891508890_n.jpg?stp=dst-jpg_p200x200&_nc_cat=108&ccb=1-7&_nc_sid=7206a8&_nc_ohc=exxqwW37rn4AX_R7dd7&_nc_ht=scontent.fhan2-3.fna&oh=00_AfAeEkLcAW3LgunJ1zra86ziOKRaDDUdSFqCXBpF3ZZBTg&oe=644759F8",
     });
+    
   };
 
   useEffect(() => {
     localStorage.setItem("user", JSON.stringify(currentUser));
   }, [currentUser]);
+  console.log(currentUser.name)
 
   return (
     <AuthContext.Provider value={{ currentUser, login }}>

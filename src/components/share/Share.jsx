@@ -16,7 +16,7 @@ const Share = () => {
             src={currentUser.profilePic}
             alt=""
           />
-          <input type="text" placeholder={`What's on your mind ${currentUser.name}?`} />
+          <input type="text" placeholder={`How your feel today? ${currentUser.name}?`} />
         </div>
         <hr />
         <div className="bottom">
@@ -28,17 +28,9 @@ const Share = () => {
                 <span>Add Image</span>
               </div>
             </label>
-            <div className="item">
-              <img src={Map} alt="" />
-              <span>Add Place</span>
-            </div>
-            <div className="item">
-              <img src={Friend} alt="" />
-              <span>Tag Friends</span>
-            </div>
           </div>
           <div className="right">
-            <button>Share</button>
+            <button>Post</button>
           </div>
         </div>
       </div>
