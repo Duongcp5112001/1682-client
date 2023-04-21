@@ -58,6 +58,24 @@
       @include mobile{
         display: none;
       }
+      .weather{
+        justify-content: center;
+        align-items: center;
+
+        .weather-top{
+          text-align: left;
+        }
+        .time-bottom{
+          text-align: right;
+        }
+        @include mobile{
+          display: none;
+        }
+        @include tablet{
+          display: none;
+        }
+    
+      }
 
       .user {
         display: flex;
