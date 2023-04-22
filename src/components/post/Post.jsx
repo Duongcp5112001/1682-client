@@ -7,11 +7,12 @@ import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import { Link } from "react-router-dom";
 import Comments from "../comments/Comments";
 import { useState } from "react";
+import PostMenu from "../PostMenu";
 
 const Post = ({ post }) => {
   const [commentOpen, setCommentOpen] = useState(false);
 
-  //TEMPORARY
+  // Liked - Dislike
   const liked = false;
 
   return (
@@ -30,7 +31,7 @@ const Post = ({ post }) => {
               <span className="date">1 min ago</span>
             </div>
           </div>
-          <MoreHorizIcon />
+        <PostMenu icon/>
         </div>
         <div className="content">
           <p>{post.desc}</p>
@@ -43,7 +44,7 @@ const Post = ({ post }) => {
           </div>
           <div className="item" onClick={() => setCommentOpen(!commentOpen)}>
             <TextsmsOutlinedIcon />
-            12 Comments
+            2 Comments
           </div>
           <div className="item">
             <ShareOutlinedIcon />

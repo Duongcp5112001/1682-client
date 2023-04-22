@@ -16,7 +16,7 @@ const Share = () => {
             src={currentUser.profilePic}
             alt=""
           />
-          <input type="text" placeholder={`How your feel today? ${currentUser.name}?`} />
+          <input type="text" placeholder={`How your feel today?`} />
         </div>
         <hr />
         <div className="bottom">
@@ -25,7 +25,7 @@ const Share = () => {
             <label htmlFor="file">
               <div className="item">
                 <img src={Image} alt="" />
-                <span>Add Image</span>
+                <span>Photo</span>
               </div>
             </label>
           </div>

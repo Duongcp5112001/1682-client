@@ -1,6 +1,6 @@
 .register {
     height: 100vh;
-    background-color: rgb(193, 190, 255);
+    background: linear-gradient(to bottom right, #3debf1 20%, #b606ad 80%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -16,8 +16,8 @@
   
       .left {
         flex: 1;
-        background: linear-gradient(rgba(39, 11, 96, 0.5), rgba(39, 11, 96, 0.5)),
-          url("https://images.pexels.com/photos/4881619/pexels-photo-4881619.jpeg?auto=compress&cs=tinysrgb&w=1600")
+        background: linear-gradient(rgba(236, 35, 220, 0.5), rgba(9, 83, 126, 0.5)),
+          url("../../assets/logo_transparent.png")
             center;
         background-size: cover;
         padding: 50px;
@@ -25,10 +25,12 @@
         flex-direction: column;
         gap: 30px;
         color: white;
+        
   
         h1 {
-          font-size: 100px;
-          line-height: 100px;
+          font-size: 60px;
+          line-height: 80px;
+          margin-bottom: 340px;
         }
         
         // p {

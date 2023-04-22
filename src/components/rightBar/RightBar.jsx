@@ -5,7 +5,7 @@ const RightBar = () => {
     <div className="rightBar">
       <div className="container">
         <div className="item">
-          <span>Suggestions For You</span>
+          <span>Suggestions</span>
           <div className="user">
             <div className="userInfo">
               <img
@@ -15,8 +15,8 @@ const RightBar = () => {
               <span>DuongD</span>
             </div>
             <div className="buttons">
-              <button>follow</button>
-              <button>dismiss</button>
+              <button>Request</button>
+              <button>Dismiss</button>
             </div>
           </div>
           <div className="user">
@@ -28,8 +28,8 @@ const RightBar = () => {
               <span>DuongD</span>
             </div>
             <div className="buttons">
-              <button>follow</button>
-              <button>dismiss</button>
+              <button>Request</button>
+              <button>Dismiss</button>
             </div>
           </div>
         </div>
@@ -42,7 +42,7 @@ const RightBar = () => {
                 alt=""
               />
               <p>
-                <span>DuongD</span> changed their cover picture
+                <span>DuongD</span> just added a new photo
               </p>
             </div>
             <span>1 min ago</span>
@@ -54,7 +54,7 @@ const RightBar = () => {
                 alt=""
               />
               <p>
-                <span>DuongD</span> changed their cover picture
+                <span>DuongD</span> just updated his status
               </p>
             </div>
             <span>1 min ago</span>
@@ -66,7 +66,7 @@ const RightBar = () => {
                 alt=""
               />
               <p>
-                <span>DuongD</span> changed their cover picture
+                <span>DuongD</span> just updated his status
               </p>
             </div>
             <span>1 min ago</span>
@@ -78,14 +78,14 @@ const RightBar = () => {
                 alt=""
               />
               <p>
-                <span>DuongD</span> changed their cover picture
+                <span>DuongD</span> just updated his status
               </p>
             </div>
             <span>1 min ago</span>
           </div>
         </div>
         <div className="item">
-          <span>Online Friends</span>
+          <span>Online</span>
           <div className="user">
             <div className="userInfo">
               <img
