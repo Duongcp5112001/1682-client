@@ -5,31 +5,31 @@ const RightBar = () => {
     <div className="rightBar">
       <div className="container">
         <div className="item">
-          <span>Suggestions For You</span>
+          <span>Suggestions</span>
           <div className="user">
             <div className="userInfo">
               <img
-                src="https://images.pexels.com/photos/4881619/pexels-photo-4881619.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                src="https://scontent.fhan2-4.fna.fbcdn.net/v/t39.30808-1/327354403_5065035306932478_3001752581867408486_n.jpg?stp=dst-jpg_p200x200&_nc_cat=105&ccb=1-7&_nc_sid=7206a8&_nc_ohc=5uUua2EwcGcAX8TkQ3M&_nc_ht=scontent.fhan2-4.fna&oh=00_AfDInqylKDZ5lozNd1MA2n1Nzru2lKzpuqW3_Unu_Y1f8A&oe=6446EB03"
                 alt=""
               />
-              <span>Jane Doe</span>
+              <span>DuongD</span>
             </div>
             <div className="buttons">
-              <button>follow</button>
-              <button>dismiss</button>
+              <button>Request</button>
+              <button>Dismiss</button>
             </div>
           </div>
           <div className="user">
             <div className="userInfo">
               <img
-                src="https://images.pexels.com/photos/4881619/pexels-photo-4881619.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                src="https://scontent.fhan2-4.fna.fbcdn.net/v/t39.30808-1/327354403_5065035306932478_3001752581867408486_n.jpg?stp=dst-jpg_p200x200&_nc_cat=105&ccb=1-7&_nc_sid=7206a8&_nc_ohc=5uUua2EwcGcAX8TkQ3M&_nc_ht=scontent.fhan2-4.fna&oh=00_AfDInqylKDZ5lozNd1MA2n1Nzru2lKzpuqW3_Unu_Y1f8A&oe=6446EB03"
                 alt=""
               />
-              <span>Jane Doe</span>
+              <span>DuongD</span>
             </div>
             <div className="buttons">
-              <button>follow</button>
-              <button>dismiss</button>
+              <button>Request</button>
+              <button>Dismiss</button>
             </div>
           </div>
         </div>
@@ -38,11 +38,11 @@ const RightBar = () => {
           <div className="user">
             <div className="userInfo">
               <img
-                src="https://images.pexels.com/photos/4881619/pexels-photo-4881619.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                src="https://scontent.fhan2-4.fna.fbcdn.net/v/t39.30808-1/327354403_5065035306932478_3001752581867408486_n.jpg?stp=dst-jpg_p200x200&_nc_cat=105&ccb=1-7&_nc_sid=7206a8&_nc_ohc=5uUua2EwcGcAX8TkQ3M&_nc_ht=scontent.fhan2-4.fna&oh=00_AfDInqylKDZ5lozNd1MA2n1Nzru2lKzpuqW3_Unu_Y1f8A&oe=6446EB03"
                 alt=""
               />
               <p>
-                <span>Jane Doe</span> changed their cover picture
+                <span>DuongD</span> just added a new photo
               </p>
             </div>
             <span>1 min ago</span>
@@ -50,11 +50,11 @@ const RightBar = () => {
           <div className="user">
             <div className="userInfo">
               <img
-                src="https://images.pexels.com/photos/4881619/pexels-photo-4881619.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                src="https://scontent.fhan2-4.fna.fbcdn.net/v/t39.30808-1/327354403_5065035306932478_3001752581867408486_n.jpg?stp=dst-jpg_p200x200&_nc_cat=105&ccb=1-7&_nc_sid=7206a8&_nc_ohc=5uUua2EwcGcAX8TkQ3M&_nc_ht=scontent.fhan2-4.fna&oh=00_AfDInqylKDZ5lozNd1MA2n1Nzru2lKzpuqW3_Unu_Y1f8A&oe=6446EB03"
                 alt=""
               />
               <p>
-                <span>Jane Doe</span> changed their cover picture
+                <span>DuongD</span> just updated his status
               </p>
             </div>
             <span>1 min ago</span>
@@ -62,11 +62,11 @@ const RightBar = () => {
           <div className="user">
             <div className="userInfo">
               <img
-                src="https://images.pexels.com/photos/4881619/pexels-photo-4881619.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                src="https://scontent.fhan2-4.fna.fbcdn.net/v/t39.30808-1/327354403_5065035306932478_3001752581867408486_n.jpg?stp=dst-jpg_p200x200&_nc_cat=105&ccb=1-7&_nc_sid=7206a8&_nc_ohc=5uUua2EwcGcAX8TkQ3M&_nc_ht=scontent.fhan2-4.fna&oh=00_AfDInqylKDZ5lozNd1MA2n1Nzru2lKzpuqW3_Unu_Y1f8A&oe=6446EB03"
                 alt=""
               />
               <p>
-                <span>Jane Doe</span> changed their cover picture
+                <span>DuongD</span> just updated his status
               </p>
             </div>
             <span>1 min ago</span>
@@ -74,126 +74,86 @@ const RightBar = () => {
           <div className="user">
             <div className="userInfo">
               <img
-                src="https://images.pexels.com/photos/4881619/pexels-photo-4881619.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                src="https://scontent.fhan2-4.fna.fbcdn.net/v/t39.30808-1/327354403_5065035306932478_3001752581867408486_n.jpg?stp=dst-jpg_p200x200&_nc_cat=105&ccb=1-7&_nc_sid=7206a8&_nc_ohc=5uUua2EwcGcAX8TkQ3M&_nc_ht=scontent.fhan2-4.fna&oh=00_AfDInqylKDZ5lozNd1MA2n1Nzru2lKzpuqW3_Unu_Y1f8A&oe=6446EB03"
                 alt=""
               />
               <p>
-                <span>Jane Doe</span> changed their cover picture
+                <span>DuongD</span> just updated his status
               </p>
             </div>
             <span>1 min ago</span>
           </div>
         </div>
         <div className="item">
-          <span>Online Friends</span>
+          <span>Online</span>
           <div className="user">
             <div className="userInfo">
               <img
-                src="https://images.pexels.com/photos/4881619/pexels-photo-4881619.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                src="https://scontent.fhan2-4.fna.fbcdn.net/v/t39.30808-1/327354403_5065035306932478_3001752581867408486_n.jpg?stp=dst-jpg_p200x200&_nc_cat=105&ccb=1-7&_nc_sid=7206a8&_nc_ohc=5uUua2EwcGcAX8TkQ3M&_nc_ht=scontent.fhan2-4.fna&oh=00_AfDInqylKDZ5lozNd1MA2n1Nzru2lKzpuqW3_Unu_Y1f8A&oe=6446EB03"
                 alt=""
               />
               <div className="online" />
-              <span>Jane Doe</span>
+              <span>DuongD</span>
             </div>
           </div>
           <div className="user">
             <div className="userInfo">
               <img
-                src="https://images.pexels.com/photos/4881619/pexels-photo-4881619.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                src="https://scontent.fhan2-4.fna.fbcdn.net/v/t39.30808-1/327354403_5065035306932478_3001752581867408486_n.jpg?stp=dst-jpg_p200x200&_nc_cat=105&ccb=1-7&_nc_sid=7206a8&_nc_ohc=5uUua2EwcGcAX8TkQ3M&_nc_ht=scontent.fhan2-4.fna&oh=00_AfDInqylKDZ5lozNd1MA2n1Nzru2lKzpuqW3_Unu_Y1f8A&oe=6446EB03"
                 alt=""
               />
               <div className="online" />
-              <span>Jane Doe</span>
+              <span>DuongD</span>
             </div>
           </div>
           <div className="user">
             <div className="userInfo">
               <img
-                src="https://images.pexels.com/photos/4881619/pexels-photo-4881619.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                src="https://scontent.fhan2-4.fna.fbcdn.net/v/t39.30808-1/327354403_5065035306932478_3001752581867408486_n.jpg?stp=dst-jpg_p200x200&_nc_cat=105&ccb=1-7&_nc_sid=7206a8&_nc_ohc=5uUua2EwcGcAX8TkQ3M&_nc_ht=scontent.fhan2-4.fna&oh=00_AfDInqylKDZ5lozNd1MA2n1Nzru2lKzpuqW3_Unu_Y1f8A&oe=6446EB03"
                 alt=""
               />
               <div className="online" />
-              <span>Jane Doe</span>
+              <span>DuongD</span>
             </div>
           </div>
           <div className="user">
             <div className="userInfo">
               <img
-                src="https://images.pexels.com/photos/4881619/pexels-photo-4881619.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                src="https://scontent.fhan2-4.fna.fbcdn.net/v/t39.30808-1/327354403_5065035306932478_3001752581867408486_n.jpg?stp=dst-jpg_p200x200&_nc_cat=105&ccb=1-7&_nc_sid=7206a8&_nc_ohc=5uUua2EwcGcAX8TkQ3M&_nc_ht=scontent.fhan2-4.fna&oh=00_AfDInqylKDZ5lozNd1MA2n1Nzru2lKzpuqW3_Unu_Y1f8A&oe=6446EB03"
                 alt=""
               />
               <div className="online" />
-              <span>Jane Doe</span>
+              <span>DuongD</span>
             </div>
           </div>
           <div className="user">
             <div className="userInfo">
               <img
-                src="https://images.pexels.com/photos/4881619/pexels-photo-4881619.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                src="https://scontent.fhan2-4.fna.fbcdn.net/v/t39.30808-1/327354403_5065035306932478_3001752581867408486_n.jpg?stp=dst-jpg_p200x200&_nc_cat=105&ccb=1-7&_nc_sid=7206a8&_nc_ohc=5uUua2EwcGcAX8TkQ3M&_nc_ht=scontent.fhan2-4.fna&oh=00_AfDInqylKDZ5lozNd1MA2n1Nzru2lKzpuqW3_Unu_Y1f8A&oe=6446EB03"
                 alt=""
               />
               <div className="online" />
-              <span>Jane Doe</span>
+              <span>DuongD</span>
             </div>
           </div>
           <div className="user">
             <div className="userInfo">
               <img
-                src="https://images.pexels.com/photos/4881619/pexels-photo-4881619.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                src="https://scontent.fhan2-4.fna.fbcdn.net/v/t39.30808-1/327354403_5065035306932478_3001752581867408486_n.jpg?stp=dst-jpg_p200x200&_nc_cat=105&ccb=1-7&_nc_sid=7206a8&_nc_ohc=5uUua2EwcGcAX8TkQ3M&_nc_ht=scontent.fhan2-4.fna&oh=00_AfDInqylKDZ5lozNd1MA2n1Nzru2lKzpuqW3_Unu_Y1f8A&oe=6446EB03"
                 alt=""
               />
               <div className="online" />
-              <span>Jane Doe</span>
+              <span>DuongD</span>
             </div>
           </div>
           <div className="user">
             <div className="userInfo">
               <img
-                src="https://images.pexels.com/photos/4881619/pexels-photo-4881619.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                src="https://scontent.fhan2-4.fna.fbcdn.net/v/t39.30808-1/327354403_5065035306932478_3001752581867408486_n.jpg?stp=dst-jpg_p200x200&_nc_cat=105&ccb=1-7&_nc_sid=7206a8&_nc_ohc=5uUua2EwcGcAX8TkQ3M&_nc_ht=scontent.fhan2-4.fna&oh=00_AfDInqylKDZ5lozNd1MA2n1Nzru2lKzpuqW3_Unu_Y1f8A&oe=6446EB03"
                 alt=""
               />
               <div className="online" />
-              <span>Jane Doe</span>
-            </div>
-          </div>
-          <div className="user">
-            <div className="userInfo">
-              <img
-                src="https://images.pexels.com/photos/4881619/pexels-photo-4881619.jpeg?auto=compress&cs=tinysrgb&w=1600"
-                alt=""
-              />
-              <div className="online" />
-              <span>Jane Doe</span>
-            </div>
-          </div>
-          <div className="user">
-            <div className="userInfo">
-              <img
-                src="https://images.pexels.com/photos/4881619/pexels-photo-4881619.jpeg?auto=compress&cs=tinysrgb&w=1600"
-                alt=""
-              />
-              <div className="online" />
-              <span>Jane Doe</span>
-            </div>
-          </div>
-          <div className="user">
-            <div className="userInfo">
-              <img
-                src="https://images.pexels.com/photos/4881619/pexels-photo-4881619.jpeg?auto=compress&cs=tinysrgb&w=1600"
-                alt=""
-              />
-              <div className="online" />
-              <span>Jane Doe</span>
-            </div>
-          </div>
-          <div className="user">
-            <div className="userInfo">
-              <img
-                src="https://images.pexels.com/photos/4881619/pexels-photo-4881619.jpeg?auto=compress&cs=tinysrgb&w=1600"
-                alt=""
-              />
-              <div className="online" />
-              <span>Jane Doe</span>
+              <span>DuongD</span>
             </div>
           </div>
         </div>
