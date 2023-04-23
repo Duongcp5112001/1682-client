@@ -21,12 +21,12 @@ const Profile = () => {
       <div className="profileContainer">
         <div className="uInfo">
           <div className="left">
-            {/* other infor */}
+           
           </div>
           <div className="center">
             <span>AnhPhuong1</span>
             <div className="info">
-              {/* otherinfor */}
+              
             </div>
             <button>Add Friend</button>
           </div>

@@ -9,25 +9,29 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { DarkModeContext } from "../../context/darkModeContext";
 import { AuthContext } from "../../context/authContext";
-import Weather from "../weather/Weather"
-import Clock from "../clock/Clock"
-import DropdownMenu from "../ProfileMenu"
-import { MessageOutlined } from "@ant-design/icons"
-
+import Weather from "../weather/Weather";
+import Clock from "../clock/Clock";
+import DropdownMenu from "../ProfileMenu";
+import { MessageOutlined } from "@ant-design/icons";
 
 const Navbar = () => {
   const { toggle, darkMode } = useContext(DarkModeContext);
-  const { currentUser } = useContext(AuthContext);
-  
 
   return (
     <div className="navbar">
       <div className="left">
-        <Link to="/" style={{ textDecoration: "none" , justifyContent: "center" ,display:"flex"}}>
-          <img src="./logo_transparent.png" className="NavLogo" alt=""/>
+        <Link
+          to="/"
+          style={{
+            textDecoration: "none",
+            justifyContent: "center",
+            display: "flex",
+          }}
+        >
+          <img src="./logo_transparent.png" className="NavLogo" alt="" />
           <span>Mystic</span>
         </Link>
-        
+
         {darkMode ? (
           <WbSunnyOutlinedIcon onClick={toggle} />
         ) : (
@@ -39,15 +43,18 @@ const Navbar = () => {
         </div>
       </div>
       <div className="right">
-      <div className="weather">
-                    <div className="weather-top"><Weather/></div>
-                    <div className="time-bottom"><Clock/></div>                  
-      </div>
-        <MessageOutlined style={{fontSize:"25px"}}/>
-        <NotificationsOutlinedIcon style={{fontSize:"30px"}}/>
+        <div className="weather">
+          <div className="weather-top">
+            <Weather />
+          </div>
+          <div className="time-bottom">
+            <Clock />
+          </div>
+        </div>
+        <MessageOutlined style={{ fontSize: "25px" }} />
+        <NotificationsOutlinedIcon style={{ fontSize: "30px" }} />
         <div className="user">
-          
-          <DropdownMenu/>
+          <DropdownMenu />
         </div>
       </div>
     </div>
