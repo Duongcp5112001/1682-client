@@ -57,19 +57,24 @@ const PostMenu =() =>{
     };
 
     const menu = (
-        <Menu onClick={handleMenuClick}>
-            <Menu.Item key="edit">Edit</Menu.Item>
-            <Menu.Item key="delete">Delete</Menu.Item>
-        </Menu>
+        <>
+            <Menu onClick={handleMenuClick}>
+                <Menu.Item key="edit">Edit</Menu.Item>
+                <Menu.Item key="delete">Delete</Menu.Item>
+            </Menu>
+        </>
+        
     );
     return(
-        <Dropdown 
-        menu={menu}
-        trigger={['click']}
-        open={visible}
-        onOpenChange={setVisible}>
-            <Avatar icon={<MoreOutlined style={{ background:'none', color:'black'}}/>} style={{ backgroundColor: '#fff', color: '#000' }} />
-        </Dropdown>
+        <>
+            <Dropdown 
+            overlay={menu}
+            trigger={['click']}
+            visible={visible}
+            onOpenChange={setVisible}>
+                <Avatar icon={<MoreOutlined style={{ background:'none', color:'black'}}/>} style={{ backgroundColor: '#fff', color: '#000' }} />
+            </Dropdown>
+        </>
     );
 };
 

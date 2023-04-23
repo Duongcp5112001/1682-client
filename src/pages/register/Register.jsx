@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+
 import { Link, useNavigate  } from "react-router-dom";
 import "./register.scss";
 import React, { useState, useEffect } from "react";
@@ -93,20 +93,20 @@ const Register = () => {
               <button type="button" onClick={onRegisterButton}>Register</button>
             </form>
           </div>
+          {/* <div className="right">
+            <h1>Sign up</h1>
+            <form>
+              <input type="text" placeholder="Username" />
+              <input type="password" placeholder="Password" />
+              <input type="passwor" placeholder="Re-enter Password" />
+              <button>Register</button>
+            </form>
+          </div> */}
         </div>
-        <div className="right">
-          <h1>Sign up</h1>
-          <form>
-            <input type="text" placeholder="Username" />
-            <input type="password" placeholder="Password" />
-            <input type="passwor" placeholder="Re-enter Password" />
-            <button>Register</button>
-          </form>
-        </div>
-        </div>
-      )}
+      )};
+      
     </div>
-  );
+  )
 };
 
 export default Register;

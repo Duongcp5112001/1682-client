@@ -15,17 +15,16 @@ const ProfileMenu = () => {
 
   const getDataMember = async () => {
     try {
-      await Axios.get(
+      const response = await Axios.get(
         "https://mystic-network.herokuapp.com/api/member/get-profile",
         {
           headers: {
             Authorization: `Bearer ${token}`,
           },
         }
-      )
-        .then((response) => {
+      );
           setDataMember(response.data.member);
-        })
+        
     } catch (error) {
       message.error(error);
     }
@@ -45,25 +44,33 @@ const ProfileMenu = () => {
   };
 
   const menu = (
-    <Menu onClick={handleMenuClick}>
-      <Menu.Item key="profile" icon={<Avatar src={dataMember.avatar}></Avatar>}>
-        {dataMember.username}
-      </Menu.Item>
-      <Menu.Item key="edit">Edit Profile</Menu.Item>
-      <Menu.Item key="setting">Setting</Menu.Item>
-      <Menu.Item key="logout">Log Out</Menu.Item>
-    </Menu>
+    <>
+      <Menu onClick={handleMenuClick}>
+        <>
+          <Menu.Item key="profile" icon={<Avatar src={dataMember.avatar}></Avatar>}>
+          {dataMember.username}
+          </Menu.Item>
+          <Menu.Item key="logout">Log Out</Menu.Item>
+        </>
+      </Menu>
+    </>
+    
+    
   );
 
     return (
-    <Dropdown
-      menu={menu}
-      trigger={"click"}
-      open={visible}
-      onOpenChange={setVisible}
-    >
-      <Avatar src={dataMember.avatar || ""}></Avatar>
-    </Dropdown>
+      <>
+        <Dropdown
+          overlay={menu}
+          trigger={"click"}
+          visible={visible}
+          onOpenChange={setVisible}
+          ><div>
+            <Avatar src={dataMember.avatar || ""}></Avatar>
+          </div>
+        </Dropdown>
+      </>
+      
   );
 };
 
