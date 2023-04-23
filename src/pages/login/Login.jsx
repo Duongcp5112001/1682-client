@@ -1,35 +1,86 @@
-import { useContext } from "react";
-import { Link } from "react-router-dom";
-import { AuthContext } from "../../context/authContext";
-import "./login.scss";
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import "./login.scss";
 import { useNavigate } from "react-router-dom";
 import Popup from 'reactjs-popup';
+import Axios from "axios";
+import Cookies from "js-cookie";
+import { message } from 'antd'
 
 
 const Login = () => {
-const { login } = useContext(AuthContext);
-const [username, setUsername] = useState("");
-const [showLoginForm, setShowLoginForm] = useState(false);
-const Navigate = useNavigate();
+    const [showLoginForm, setShowLoginForm] = useState('');
+    const [userName, setUsername] = useState('');
+    const [userName1, setUsername1] = useState('');
+    const [passWord, setPassword] = useState('');
+    const navigate = useNavigate();
 
-    const handleLogin = () => {
-        login();
+    const onChangeUsername = (event) => {
+        const data = event.target.value
+        setUsername(data)
     };
 
-const handleShowLoginForm = () => {
-    setShowLoginForm(true);
-};
+    const onChangePassword = (event) => {
+        const data = event.target.value
+        setPassword(data)
+    };
 
-const handleLoginFormSubmit = (e) => {
-    e.preventDefault();
-    setShowLoginForm(false);
-    if (username !== "") {
-        Navigate.push("/");
-    }
-};
+    const onChangeUsername1 = (event) => {
+        const data = event.target.value
+        setUsername1(data)
+    };
 
+    const handleShowLoginForm = () => {
+        setShowLoginForm(true);
+    };
 
+    const onClickLogin = async (event) => {
+        try {
+            const formData = {
+                username: userName,
+                password: passWord
+            };
+            await Axios.post( 
+                'https://mystic-network.herokuapp.com/api/login', 
+                formData,
+              ).then((response) => {
+                if (response.data.access_token) {
+                    Cookies.set('token', response.data.access_token)
+                    if (Cookies.get('token')) {
+                        if (response.data.member.role === 'ADMIN') {
+                            navigate('/admin-page');
+                        } else {
+                            navigate('/');
+                        }
+                    }
+                }
+              });
+        } catch (error) {
+            message.error(error)
+        }
+    };
+
+    const onClickLogin1 = async (event) => {
+        setShowLoginForm(false);
+        try {
+            const formData = {
+                username: userName1
+            };
+            await Axios.post( 
+                'https://mystic-network.herokuapp.com/api/login-no-password', 
+                formData
+              ).then((response) => {
+                if (response.data.access_token) {
+                    Cookies.set('token', response.data.access_token)
+                    if (Cookies.get('token')) {
+                      navigate('/')
+                    }
+                }
+              });
+        } catch (error) {
+            message.error(error)
+        }
+    };
 
 return (
 <div className="login">
@@ -46,9 +97,17 @@ return (
     <div className="right">
         <h1>Login</h1>
         <form>
-        <input type="text" placeholder="Username" />
-        <input type="password" placeholder="Password" />
-        <button onClick={handleLogin}>Login</button>
+        <input
+            type="text" 
+            placeholder="Username" 
+            onChange={onChangeUsername}/>
+        <input 
+            type="password" 
+            placeholder="Password" 
+            onChange={onChangePassword}/>
+        <button
+            type="button"
+            onClick={onClickLogin}>Login</button>
         <Link to="/resetpasword" style={{ textDecoration: "none" , color:"grey" }}>
             <p>Don't remember your password?</p>
         </Link>
@@ -56,9 +115,9 @@ return (
         <p onClick={handleShowLoginForm}>Or Login without account.</p>
         {showLoginForm && (
             <div>
-            <form onSubmit={handleLoginFormSubmit}>
-            <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} placeholder="Username"/>
-            <button type="submit">Continue</button>
+            <form>
+            <input type="text" onChange={onChangeUsername1} placeholder="Username"/>
+            <button onClick={onClickLogin1}>Continue</button>
             </form>
         </div>
         )}

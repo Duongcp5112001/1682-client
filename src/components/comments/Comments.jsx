@@ -1,9 +1,36 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import "./comments.scss";
 import { AuthContext } from "../../context/authContext";
+import Axios from "axios";
+import Cookies from "js-cookie";
+import { message } from "antd";
 
 const Comments = () => {
-  const { currentUser } = useContext(AuthContext);
+  const token = Cookies.get("token");
+
+  const [dataMember, setDataMember] = useState({});
+
+  const getDataMember = async () => {
+    try {
+      await Axios.get(
+        "https://mystic-network.herokuapp.com/api/member/get-profile",
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      )
+        .then((response) => {
+          setDataMember(response.data.member);
+        })
+    } catch (error) {
+      message.error(error);
+    }
+  };
+
+  useEffect(() => {
+    getDataMember();
+  }, []);
   
   const comments = [
     {
@@ -26,7 +53,7 @@ const Comments = () => {
   return (
     <div className="comments">
       <div className="write">
-        <img src={currentUser.profilePic} alt="" />
+        <img src={dataMember.avatar} alt="" />
         <input type="text" placeholder="write a comment" />
         <button>Send</button>
       </div>

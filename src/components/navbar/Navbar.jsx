@@ -9,15 +9,12 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { DarkModeContext } from "../../context/darkModeContext";
 import { AuthContext } from "../../context/authContext";
-import Weather from "../weather/Weather"
-import Clock from "../clock/Clock"
-import DropdownMenu from "../ProfileMenu"
-
+import Weather from "../weather/Weather";
+import Clock from "../clock/Clock";
+import ProfileMenu from "../ProfileMenu";
 
 const Navbar = () => {
   const { toggle, darkMode } = useContext(DarkModeContext);
-  const { currentUser } = useContext(AuthContext);
-  
 
   return (
     <div className="navbar">
@@ -37,15 +34,18 @@ const Navbar = () => {
         </div>
       </div>
       <div className="right">
-      <div className="weather">
-                    <div className="weather-top"><Weather/></div>
-                    <div className="time-bottom"><Clock/></div>                  
-      </div>
+        <div className="weather">
+          <div className="weather-top">
+            <Weather />
+          </div>
+          <div className="time-bottom">
+            <Clock />
+          </div>
+        </div>
         <EmailOutlinedIcon />
         <NotificationsOutlinedIcon />
         <div className="user">
-          
-          <DropdownMenu/>
+          <ProfileMenu />
         </div>
       </div>
     </div>

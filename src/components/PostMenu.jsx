@@ -1,24 +1,60 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import { Avatar,Dropdown, Menu } from "antd";
-import { AuthContext } from "../context/authContext";
 import { useContext } from "react";
 import { Link, Navigate } from "react-router-dom";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import { MoreOutlined } from '@ant-design/icons';
-
+import { useNavigate } from "react-router-dom";
+import Axios from "axios";
+import Cookies from "js-cookie";
+import { message } from 'antd'
 
 const PostMenu =() =>{
-    
     const [visible, setVisible] = useState(false);
-    const { currentUser } = useContext(AuthContext);
+    const navigate = useNavigate();
     
+    const token = Cookies.get("token");
+    const [dataMember, setDataMember] = useState({});
+
+    const getDataMember = async () => {
+        try {
+        await Axios.get(
+            "https://mystic-network.herokuapp.com/api/member/get-profile",
+            {
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+            }
+        )
+            .then((response) => {
+                setDataMember(response.data.member);
+            })
+        } catch (error) {
+        message.error(error);
+        }
+    };
+
+    useEffect(() => {
+        getDataMember();
+    }, []);
+
+    const logoutEvent = async (e) => {
+        await Axios.post( 
+            'https://mystic-network.herokuapp.com/api/logout'
+        ).then((response) => {
+            Cookies.remove('token')
+            navigate('/login')
+        })
+    }
 
     const handleMenuClick = (e) =>{
         if(e.key === 'logout'){
-            window.location.replace('/login');
+            logoutEvent();
         }
         if(e.key === 'profile'){
-            window.location.href = `/profile/${currentUser.id}`;
+            if (dataMember !== []) {
+                window.location.href = `/profile/${dataMember._id}`;
+            }
         }
     };
 
@@ -30,13 +66,11 @@ const PostMenu =() =>{
     );
     return(
         <Dropdown 
-        overlay={menu}
+        menu={menu}
         trigger={['click']}
-        visible={visible}
-        onVisibleChange={setVisible}>
+        open={visible}
+        onOpenChange={setVisible}>
             <Avatar icon={<MoreOutlined style={{ background:'none', color:'black'}}/>} style={{ backgroundColor: '#fff', color: '#000' }} />
-            
-            
         </Dropdown>
     );
 };
