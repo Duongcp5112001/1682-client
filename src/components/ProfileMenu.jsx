@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { Avatar, Dropdown, Menu } from "antd";
 import { useContext } from "react";
-import { Link, Navigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Axios from "axios";
 import Cookies from "js-cookie";
 import { message } from "antd";
 
 const ProfileMenu = () => {
   const [visible, setVisible] = useState(false);
+  const navigate = useNavigate();
 
   const token = Cookies.get("token");
-
+  
   const [dataMember, setDataMember] = useState({});
 
   const getDataMember = async () => {
@@ -36,10 +37,18 @@ const ProfileMenu = () => {
 
   const handleMenuClick = (e) => {
     if (e.key === "logout") {
-      window.location.replace("/login");
+      try {
+        Axios.post(
+          "https://mystic-network.herokuapp.com/api/logout",
+        );
+      } catch (error) {
+        message.error(error);
+      }
+      Cookies.remove('token');
+      navigate('/login');
     }
     if (e.key === "profile") {
-      window.location.href = `/profile/${dataMember._id}`;
+      navigate(`/profile/${dataMember._id}`);
     }
   };
 
@@ -54,8 +63,6 @@ const ProfileMenu = () => {
         </>
       </Menu>
     </>
-    
-    
   );
 
     return (
