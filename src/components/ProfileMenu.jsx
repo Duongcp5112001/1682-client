@@ -17,6 +17,9 @@ const ProfileMenu =() =>{
         if(e.key === 'profile'){
             window.location.href = `/profile/${currentUser.id}`;
         }
+        if(e.key === 'edit'){
+            window.location.href = `/editPro/${currentUser.id}`;
+        }
     };
 
     const menu = (
@@ -24,7 +27,6 @@ const ProfileMenu =() =>{
             <Menu.Item key="profile" icon={<Avatar src={currentUser.profilePic}/>}>{currentUser.name}</Menu.Item>
             <Menu.Divider/>
             <Menu.Item key="edit">Edit Profile</Menu.Item>
-            <Menu.Item key="setting">Setting</Menu.Item>
             <Menu.Divider/>
             <Menu.Item key="logout">Log Out</Menu.Item>
         </Menu>

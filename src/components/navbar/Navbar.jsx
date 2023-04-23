@@ -12,6 +12,7 @@ import { AuthContext } from "../../context/authContext";
 import Weather from "../weather/Weather"
 import Clock from "../clock/Clock"
 import DropdownMenu from "../ProfileMenu"
+import { MessageOutlined } from "@ant-design/icons"
 
 
 const Navbar = () => {
@@ -22,10 +23,11 @@ const Navbar = () => {
   return (
     <div className="navbar">
       <div className="left">
-        <Link to="/" style={{ textDecoration: "none" }}>
+        <Link to="/" style={{ textDecoration: "none" , justifyContent: "center" ,display:"flex"}}>
+          <img src="./logo_transparent.png" className="NavLogo" alt=""/>
           <span>Mystic</span>
         </Link>
-        <HomeOutlinedIcon />
+        
         {darkMode ? (
           <WbSunnyOutlinedIcon onClick={toggle} />
         ) : (
@@ -41,8 +43,8 @@ const Navbar = () => {
                     <div className="weather-top"><Weather/></div>
                     <div className="time-bottom"><Clock/></div>                  
       </div>
-        <EmailOutlinedIcon />
-        <NotificationsOutlinedIcon />
+        <MessageOutlined style={{fontSize:"25px"}}/>
+        <NotificationsOutlinedIcon style={{fontSize:"30px"}}/>
         <div className="user">
           
           <DropdownMenu/>

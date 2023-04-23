@@ -16,6 +16,10 @@ import "./style.scss";
 import { useContext } from "react";
 import { DarkModeContext } from "./context/darkModeContext";
 import { AuthContext } from "./context/authContext";
+import Group from "./pages/group/Group";
+import Friends from "./pages/friend/Friends";
+import EditProf from "./pages/editProfile/EditProfile";
+
 
 function App() {
   const {currentUser} = useContext(AuthContext);
@@ -62,6 +66,18 @@ function App() {
           path: "/profile/:id",
           element: <Profile />,
         },
+        {
+          path: "/group",
+          element: <Group />, 
+        },
+        {
+          path: "/friend",
+          element: <Friends />, 
+        },
+        {
+          path: "/editPro/:id",
+          element: <EditProf />, 
+        }
       ],
     },
     {
@@ -72,6 +88,7 @@ function App() {
       path: "/register",
       element: <Register />,
     },
+    
   ]);
 
   return (

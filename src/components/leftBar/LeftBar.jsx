@@ -25,12 +25,18 @@ const LeftBar = () => {
             
           </div>
           <div className="item">
-            <img src={Friends} alt="" />
-            <span>Friends</span>
+            <Link to="/friend" style={{ textDecoration: "none", color: "inherit", display: "flex", alignItems: "center", justifyContent: "center", gap: "10px"}}>
+              <img src={Friends} alt="" />
+              <span>Friends</span>
+            </Link>
+            
           </div>
           <div className="item">
-            <img src={Groups} alt="" />
-            <span>Groups</span>
+            <Link to="/group" style={{ textDecoration: "none", color: "inherit", display: "flex", alignItems: "center", justifyContent: "center", gap: "10px"}}>
+              <img src={Groups} alt="" />
+              <span>Groups</span>
+            </Link>
+            
           </div>
         </div>
         <hr />

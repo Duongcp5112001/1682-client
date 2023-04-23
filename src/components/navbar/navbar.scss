@@ -19,9 +19,18 @@
       align-items: center;
       gap: 30px;
 
+
+      .NavLogo{
+        margin-top: 5px;
+        width: 100px;
+        height: 70px;
+      }
+
       span {
+        margin-top: 10px;
+        align-items: center;
         font-weight: bold;
-        font-size: 20px;
+        font-size: 30px;
         color: themed("logo");
       }
 

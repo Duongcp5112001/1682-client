@@ -14,18 +14,18 @@ const PostMenu =() =>{
     
 
     const handleMenuClick = (e) =>{
-        if(e.key === 'logout'){
-            window.location.replace('/login');
+        if(e.key === 'edit'){
+            //function edit post cua nguoi dung
         }
-        if(e.key === 'profile'){
-            window.location.href = `/profile/${currentUser.id}`;
+        if(e.key === 'delete'){
+           //function delete post cua nguoi dung
         }
     };
 
     const menu = (
         <Menu onClick={handleMenuClick}>
             <Menu.Item key="edit">Edit</Menu.Item>
-            <Menu.Item key="setting">Delete</Menu.Item>
+            <Menu.Item key="delete">Delete</Menu.Item>
         </Menu>
     );
     return(

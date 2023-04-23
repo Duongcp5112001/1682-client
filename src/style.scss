@@ -1,11 +1,11 @@
 $themes: (
   light: (
-    textColor: #000,
-    bg: white,
-    logo: darkblue,
-    bgSoft: #f6f3f3,
+    textColor: rgb(0, 0, 0),
+    bg: rgba(223, 216, 231, 0.767),
+    logo: rgb(138, 47, 199),
+    bgSoft: #d9d3da,
     textColorSoft: #555,
-    border: lightgray,
+    border: rgb(165, 126, 177),
   ),
   dark: (
     textColor: whitesmoke,
