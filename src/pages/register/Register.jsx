@@ -103,6 +103,7 @@ const Register = () => {
             <button>Register</button>
           </form>
         </div>
+        </div>
       )}
     </div>
   );
