@@ -56,7 +56,6 @@ const Profile = () => {
           <div className="center">
             <span>{dataMember.username}</span>
             <div className="info">
-              
             </div>
             <button>Add Friend</button>
           </div>
