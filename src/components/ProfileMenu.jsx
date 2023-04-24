@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Avatar, Dropdown, Menu } from "antd";
-import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Axios from "axios";
 import Cookies from "js-cookie";
