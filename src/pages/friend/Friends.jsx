@@ -21,7 +21,7 @@ friend.name.toLowerCase().includes(searchText.toLowerCase())
 );
 
 return (
-{/* <div className="friends-container">
+<div className="friends-container">
     <h1 className="friends-header">My Friends</h1>
     <div className="friends-search-container">
     <p className="friends-count">All Friends {friends.length}</p>
@@ -40,7 +40,7 @@ return (
         </li>
     ))}
     </ul>
-</div> */}
+</div> 
 );
 };
 

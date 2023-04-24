@@ -13,9 +13,14 @@ import Weather from "../weather/Weather";
 import Clock from "../clock/Clock";
 import DropdownMenu from "../ProfileMenu";
 import { MessageOutlined } from "@ant-design/icons";
+import { FiMessageSquare } from 'react-icons/fi';
+
+
 
 const Navbar = () => {
   const { toggle, darkMode } = useContext(DarkModeContext);
+
+
 
   return (
     <div className="navbar">
