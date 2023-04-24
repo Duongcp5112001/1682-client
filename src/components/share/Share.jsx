@@ -33,6 +33,8 @@ const Share = () => {
     getDataMember();
   }, []);
   
+  
+
   return (
     <div className="share">
       <div className="container">
@@ -42,6 +44,7 @@ const Share = () => {
             alt=""
           />
           <input type="text" placeholder={`How your feel today?`} />
+
         </div>
         <hr />
         <div className="bottom">

@@ -64,7 +64,7 @@ const LeftBar = () => {
             
           </div>
           <div className="item">
-            <Link to="/group" style={{ textDecoration: "none", color: "inherit", display: "flex", alignItems: "center", justifyContent: "center", gap: "10px"}}>
+            <Link to="/" style={{ textDecoration: "none", color: "inherit", display: "flex", alignItems: "center", justifyContent: "center", gap: "10px"}}>
               <img src={Groups} alt="" />
               <span>Groups</span>
             </Link>

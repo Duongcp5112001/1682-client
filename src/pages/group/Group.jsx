@@ -3,8 +3,9 @@ import "./group.scss";
 const Group = () =>{
     return(
         <div className="group">
-            Test group
-
+            <div className="grouplist">
+                
+            </div>
         </div>
     )
 
