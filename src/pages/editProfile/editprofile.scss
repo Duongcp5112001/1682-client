@@ -2,7 +2,7 @@
 
 .user-container {
   padding: 10px 120px;
-  height: calc(100vh - 110px);
+  height: calc(100vh - 90px);
   @include themify($themes) {
     display: flex;
     align-items: center;
