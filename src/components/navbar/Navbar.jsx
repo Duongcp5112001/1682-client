@@ -6,21 +6,16 @@ import NotificationsOutlinedIcon from "@mui/icons-material/NotificationsOutlined
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import { Link } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { DarkModeContext } from "../../context/darkModeContext";
 import { AuthContext } from "../../context/authContext";
 import Weather from "../weather/Weather";
 import Clock from "../clock/Clock";
-import DropdownMenu from "../ProfileMenu";
+import ProfileMenu from "../ProfileMenu";
 import { MessageOutlined } from "@ant-design/icons";
-import { FiMessageSquare } from 'react-icons/fi';
 
-
-
-const Navbar = () => {
+const Navbar = (props) => {
   const { toggle, darkMode } = useContext(DarkModeContext);
-
-
 
   return (
     <div className="navbar">
@@ -59,7 +54,7 @@ const Navbar = () => {
         <MessageOutlined style={{ fontSize: "25px" }} />
         <NotificationsOutlinedIcon style={{ fontSize: "30px" }} />
         <div className="user">
-          <DropdownMenu />
+          <ProfileMenu dataMember={props.dataMember} />
         </div>
       </div>
     </div>

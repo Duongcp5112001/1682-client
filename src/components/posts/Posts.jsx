@@ -1,8 +1,7 @@
 import Post from "../post/Post";
 import "./posts.scss";
 
-const Posts = () => {
-  
+const Posts = (props) => {
   const posts = [
     {
       id: 1,
@@ -25,7 +24,7 @@ const Posts = () => {
 
   return <div className="posts">
     {posts.map(post=>(
-      <Post post={post} key={post.id}/>
+      <Post post={post} key={post.id} dataMember={props.dataMember}/>
     ))}
   </div>;
 };

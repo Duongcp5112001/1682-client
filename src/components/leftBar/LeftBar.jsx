@@ -8,26 +8,12 @@ import Axios from "axios";
 import Cookies from "js-cookie";
 import { message } from "antd";
 
-const LeftBar = () => {
+const LeftBar = (props) => {
   const token = Cookies.get('token');
   const [dataMember, setDataMember] = useState({});
   const [dataGroupMemberId, setDataGroupMemberId] = useState([]);
   const [dataGroup, setDataGroup] = useState([])
-
-  const getDataMember = async () => {
-    await Axios.get(
-      "https://mystic-network.herokuapp.com/api/member/get-profile",
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      }
-    ).then((response) => {
-      setDataMember(response.data.member)
-    })
-    getGroupId();
-  };
-
+//
   const getGroupId = async () => {
     await Axios.get(
       "https://mystic-network.herokuapp.com/api/member/get-group-list",
@@ -68,7 +54,8 @@ const LeftBar = () => {
   };
 //
   useEffect(() => {
-    getDataMember();
+    setDataMember(props.dataMember);
+    getGroupId();
   }, []);
 
   return (

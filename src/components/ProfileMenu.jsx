@@ -5,33 +5,14 @@ import Axios from "axios";
 import Cookies from "js-cookie";
 import { message } from "antd";
 
-const ProfileMenu = () => {
+const ProfileMenu = (props) => {
   const [visible, setVisible] = useState(false);
-  const navigate = useNavigate();
-
-  const token = Cookies.get("token");
-  
   const [dataMember, setDataMember] = useState({});
-
-  const getDataMember = async () => {
-    try {
-      const response = await Axios.get(
-        "https://mystic-network.herokuapp.com/api/member/get-profile",
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
-          setDataMember(response.data.member);
-        
-    } catch (error) {
-      message.error(error);
-    }
-  };
+  const navigate = useNavigate();
+  const token = Cookies.get("token");
 
   useEffect(() => {
-    getDataMember();
+    setDataMember(props.dataMember);
   }, []);
 
   const handleMenuClick = (e) => {
@@ -72,7 +53,7 @@ const ProfileMenu = () => {
           visible={visible}
           onOpenChange={setVisible}
           ><div>
-            <Avatar src={dataMember.avatar || ""}></Avatar>
+            <Avatar src={dataMember.avatar}></Avatar>
           </div>
         </Dropdown>
       </>

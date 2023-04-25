@@ -7,34 +7,14 @@ import Axios from "axios";
 import Cookies from "js-cookie";
 import { message } from "antd";
 
-const Share = () => {
+const Share = (props) => {
   const token = Cookies.get("token");
   const [dataMember, setDataMember] = useState({});
 
-  const getDataMember = async () => {
-    try {
-      await Axios.get(
-        "https://mystic-network.herokuapp.com/api/member/get-profile",
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      )
-        .then((response) => {
-          setDataMember(response.data.member);
-        })
-    } catch (error) {
-      message.error(error);
-    }
-  };
-
   useEffect(() => {
-    getDataMember();
+    setDataMember(props.dataMember);
   }, []);
   
-  
-
   return (
     <div className="share">
       <div className="container">

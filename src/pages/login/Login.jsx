@@ -37,7 +37,7 @@ const Login = () => {
         setTimeout(() => {
         setIsLoading(false);
         }, 500);
-    }, []);
+    });
 
     const handleShowLoginForm = () => {
         setShowLoginForm(true);

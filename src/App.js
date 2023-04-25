@@ -13,31 +13,53 @@ import RightBar from "./components/rightBar/RightBar";
 import Home from "./pages/home/Home";
 import Profile from "./pages/profile/Profile";
 import "./style.scss";
-import { useContext } from "react";
+import { useState, useEffect, useContext } from "react";
 import { DarkModeContext } from "./context/darkModeContext";
-import { AuthContext } from "./context/authContext";
 import Group from "./pages/group/Group";
 import Friends from "./pages/friend/Friends";
 import EditProf from "./pages/editProfile/EditProfile";
 import Cookies from "js-cookie"
+import Axios from "axios";
 
 function App() {
   const { darkMode } = useContext(DarkModeContext);
 
-  const Layout = () => {
+  const token = Cookies.get('token');
+  const [dataMember, setDataMember] = useState({});
+
+  const getDataMember = async () => {
+    await Axios.get(
+      "https://mystic-network.herokuapp.com/api/member/get-profile",
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    ).then((response) => {
+      setDataMember(response.data.member)
+    })
+  };
+
+  useEffect(() => {
+    getDataMember();
+  }, []);
+
+  const Layout = (props) => {
     return (
       <div className={`theme-${darkMode ? "dark" : "light"}`}>
-        <Navbar />
+        <Navbar dataMember={props.dataMember} test={'asdasd'}/>
         <div style={{ display: "flex" }}>
-          <LeftBar />
+          <LeftBar dataMember={props.dataMember} />
           <div style={{ flex: 6 }}>
             <Outlet />
           </div>
-          <RightBar />
+          <RightBar dataMember={props.dataMember} />
         </div>
       </div>
     );
   };
+
+  
 
   const ProtectedRoute = ({ children }) => {
     const token = Cookies.get('token')
@@ -53,13 +75,13 @@ function App() {
       path: "/",
       element: (
         <ProtectedRoute>
-          <Layout />
+          <Layout dataMember={dataMember} />
         </ProtectedRoute>
       ),
       children: [
         {
           path: "/",
-          element: <Home />,
+          element: <Home dataMember={dataMember} />,
         },
         {
           path: "/profile/:_id",

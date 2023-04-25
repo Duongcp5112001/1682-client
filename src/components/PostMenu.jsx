@@ -14,29 +14,6 @@ const PostMenu =() =>{
     const navigate = useNavigate();
     
     const token = Cookies.get("token");
-    const [dataMember, setDataMember] = useState({});
-
-    const getDataMember = async () => {
-        try {
-        await Axios.get(
-            "https://mystic-network.herokuapp.com/api/member/get-profile",
-            {
-            headers: {
-                Authorization: `Bearer ${token}`,
-            },
-            }
-        )
-            .then((response) => {
-                setDataMember(response.data.member);
-            })
-        } catch (error) {
-        message.error(error);
-        }
-    };
-
-    useEffect(() => {
-        getDataMember();
-    }, []);
 
     const logoutEvent = async (e) => {
         await Axios.post( 
@@ -68,10 +45,11 @@ const PostMenu =() =>{
     return(
         <>
             <Dropdown 
-            overlay={menu}
-            trigger={['click']}
-            visible={visible}
-            onOpenChange={setVisible}>
+                overlay={menu}
+                trigger={['click']}
+                visible={visible}
+                onOpenChange={setVisible}
+            >
                 <Avatar icon={<MoreOutlined style={{ background:'none', color:'black'}}/>} style={{ backgroundColor: '#fff', color: '#000' }} />
             </Dropdown>
         </>

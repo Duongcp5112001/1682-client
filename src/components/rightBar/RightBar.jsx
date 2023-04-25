@@ -1,14 +1,15 @@
 import "./rightBar.scss";
 import Axios from "axios";
 import Cookies from "js-cookie";
-import { message } from "antd";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom"
 
-const RightBar = () => {
+const RightBar = (props) => {
   const token = Cookies.get('token');
+  const [dataMember, setDataMember] = useState({}); 
   const [dataFriendMemberId, setDataFriendMemberId] = useState([]);
   const [dataFriend, setFriendGroup] = useState([])
-
+//
   const getFriendId = async () => {
     await Axios.get(
       "https://mystic-network.herokuapp.com/api/member/get-friend-list",
@@ -20,10 +21,9 @@ const RightBar = () => {
     ).then((response) => {
       setDataFriendMemberId(response.data.data.data)
     })
-    console.log("a: " + dataFriendMemberId)
     getFriendData();
   };
-//
+
   const getFriendData = async () => {
     const friendIds = dataFriendMemberId.map(data => data.friendId);
 
@@ -47,10 +47,10 @@ const RightBar = () => {
     const data = responses.map(response => response.data);
     const dataFinal = data.map(data => data.member)
     setFriendGroup(dataFinal);
-    console.log("asdasd: " + dataFriend)
   };
-
+//
   useEffect(() => {
+    setDataMember(props.dataMember);
     getFriendId();
   }, []);
 
@@ -95,12 +95,24 @@ const RightBar = () => {
                 items.push(
                   <div className="user">
                     <div className="userInfo" key={data._id}>
-                      <img
-                        src={data.avatar}
-                        alt=""
-                      />
-                      <div className="online" />
-                      <span>{data.username}</span>
+                      <Link
+                        to={`/profile/${data._id}`}
+                        style={{
+                          textDecoration: "none",
+                          color: "inherit",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          gap: "10px",
+                        }}
+                      >
+                        <img
+                          src={data.avatar}
+                          alt=""
+                        />
+                        <div className="online" />
+                        <span>{data.username}</span>
+                    </Link>
                     </div>
                   </div>
                 );

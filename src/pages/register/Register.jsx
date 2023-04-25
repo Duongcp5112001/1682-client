@@ -17,7 +17,7 @@ const Register = () => {
 
   useEffect(() => {
     setTimeout(() => {
-    setIsLoading(false);
+      setIsLoading(false);
     }, 500);
   }, []);
 

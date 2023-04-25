@@ -6,27 +6,32 @@ import ShareOutlinedIcon from "@mui/icons-material/ShareOutlined";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import { Link } from "react-router-dom";
 import Comments from "../comments/Comments";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import PostMenu from "../PostMenu";
 
-const Post = ({ post }) => {
-  const [commentOpen, setCommentOpen] = useState(false);
-
-  // Liked - Dislike
+const Post = (props) => {
+  const [commentOpen, setCommentOpen] = useState(false); 
+  const [postData, setPostData] = useState({}); 
+  const [dataMember, setDataMember] = useState({}); 
   const liked = false;
+
+  useEffect(() => {
+    setPostData(props.post);
+    setDataMember(props.dataMember);
+  }, []);
 
   return (
     <div className="post">
       <div className="container">
         <div className="user">
           <div className="userInfo">
-            <img src={post.profilePic} alt="" />
+            <img src={postData.profilePic} alt="" />
             <div className="details">
               <Link
-                to={`/profile/${post.userId}`}
+                to={`/profile/${postData.userId}`}
                 style={{ textDecoration: "none", color: "inherit" }}
               >
-                <span className="name">{post.name}</span>
+                <span className="name">{postData.name}</span>
               </Link>
               <span className="date">1 min ago</span>
             </div>
@@ -34,8 +39,8 @@ const Post = ({ post }) => {
         <PostMenu icon/>
         </div>
         <div className="content">
-          <p>{post.desc}</p>
-          <img src={post.img} alt="" />
+          <p>{postData.desc}</p>
+          <img src={postData.img} alt="" />
         </div>
         <div className="info">
           <div className="item">
@@ -51,7 +56,7 @@ const Post = ({ post }) => {
             Share
           </div>
         </div>
-        {commentOpen && <Comments />}
+        {commentOpen && <Comments dataMember={dataMember} />}
       </div>
     </div>
   );
