@@ -60,7 +60,7 @@ const Navbar = () => {
             display: "flex",
           }}
         >
-          <MessageOutlined style={{ fontSize: "23px", cursor: "pointer", color:"black" }} />
+          <MessageOutlined className="messagebutton" style={{ fontSize: "23px", cursor: "pointer", textDecoration:"none" }} />
         </Link>
         <NotificationsOutlinedIcon style={{ fontSize: "30px" }} />
         <div className="user">
