@@ -6,6 +6,8 @@ import {
   Route,
   Outlet,
   Navigate,
+  useNavigate,
+  useLocation,
 } from "react-router-dom";
 import Navbar from "./components/navbar/Navbar";
 import LeftBar from "./components/leftBar/LeftBar";
@@ -13,19 +15,31 @@ import RightBar from "./components/rightBar/RightBar";
 import Home from "./pages/home/Home";
 import Profile from "./pages/profile/Profile";
 import "./style.scss";
-import { useContext } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { DarkModeContext } from "./context/darkModeContext";
 import { AuthContext } from "./context/authContext";
 import Group from "./pages/group/Group";
 import Friends from "./pages/friend/Friends";
 import EditProf from "./pages/editProfile/EditProfile";
-import Cookies from "js-cookie"
+import Cookies from "js-cookie";
 import Message from "./pages/message/Message";
+import Dashboard from "./pages/dashboard/Dashboard";
 
 function App() {
   const { darkMode } = useContext(DarkModeContext);
 
   const Layout = () => {
+    const location = useLocation();
+    const [style, setStyle] = useState({});
+    useEffect(() => {
+      const dashboard = document.getElementById("dashboard");
+
+      if (dashboard) {
+        setStyle(() => ({ display: "none" }));
+      } else {
+        setStyle(() => ({}));
+      }
+    }, [location.pathname]);
     return (
       <div className={`theme-${darkMode ? "dark" : "light"}`}>
         <Navbar />
@@ -34,14 +48,14 @@ function App() {
           <div style={{ flex: 6 }}>
             <Outlet />
           </div>
-          <RightBar />
+          <RightBar style={style} />
         </div>
       </div>
     );
   };
 
   const ProtectedRoute = ({ children }) => {
-    const token = Cookies.get('token')
+    const token = Cookies.get("token");
     if (!token) {
       return <Navigate to="/login" />;
     }
@@ -68,21 +82,24 @@ function App() {
         },
         {
           path: "/message",
-          element: <Message />, 
+          element: <Message />,
         },
         {
           path: "/friend",
-          element: <Friends />, 
+          element: <Friends />,
         },
         {
           path: "/editPro/:id",
-          element: <EditProf />, 
+          element: <EditProf />,
         },
         {
           path: "/group/:id",
-          element: <Group />, 
-        }
-
+          element: <Group />,
+        },
+        {
+          path: "/dashboard",
+          element: <Dashboard />,
+        },
       ],
     },
     {
@@ -93,7 +110,6 @@ function App() {
       path: "/register",
       element: <Register />,
     },
-    
   ]);
 
   return (

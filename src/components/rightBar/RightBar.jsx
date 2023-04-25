@@ -4,7 +4,7 @@ import Cookies from "js-cookie";
 import { message } from "antd";
 import { useEffect, useState } from "react";
 
-const RightBar = () => {
+const RightBar = ({style}) => {
   const token = Cookies.get('token');
   const [dataFriendMemberId, setDataFriendMemberId] = useState([]);
   const [dataFriend, setFriendGroup] = useState([])
@@ -55,7 +55,7 @@ const RightBar = () => {
   }, []);
 
   return (
-    <div className="rightBar">
+    <div className="rightBar" style={style}>
       <div className="container">
         <div className="item">
           <span>Suggestions</span>
