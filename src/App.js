@@ -20,6 +20,7 @@ import Group from "./pages/group/Group";
 import Friends from "./pages/friend/Friends";
 import EditProf from "./pages/editProfile/EditProfile";
 import Cookies from "js-cookie"
+import Message from "./pages/message/Message";
 
 function App() {
   const { darkMode } = useContext(DarkModeContext);
@@ -66,8 +67,8 @@ function App() {
           element: <Profile />,
         },
         {
-          path: "/group",
-          element: <Group />, 
+          path: "/message",
+          element: <Message />, 
         },
         {
           path: "/friend",
@@ -76,7 +77,12 @@ function App() {
         {
           path: "/editPro/:id",
           element: <EditProf />, 
+        },
+        {
+          path: "/group/:id",
+          element: <Group />, 
         }
+
       ],
     },
     {
