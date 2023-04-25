@@ -1,0 +1,80 @@
+@import "../../style.scss";
+
+.user-container {
+  padding: 10px 120px;
+  height: calc(100vh - 110px);
+  @include themify($themes) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: themed("bgSoft");
+    gap: 10px;
+    width: 80%;
+    
+    @include mobile {
+      padding: 10px;
+    }
+  
+    @include tablet{
+      padding: 20px;
+    }
+    .container{
+      width: 100%;
+      display: flex;
+      background-color: themed("bg");
+      align-items: center;
+      justify-content: center;
+      color: themed("textColor");
+      border-radius: 20px;
+      box-shadow: black;
+
+      h1 {
+        color: themed("textColor");
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2rem;
+        position: absolute;
+        top: 10%;
+        margin: 0;
+      }
+    }
+    
+   
+    
+    form {
+      width: 60%;
+      padding-top: 10px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      label {
+        font-size: 16px;
+      }
+      
+      input[type="text"],
+      input[type="password"],
+      input[type="file"] {
+        border: none;
+        border-radius: 5px;
+        padding: 5px;
+        margin-bottom: 5px;
+        background-color: #e8e8e8;
+        font-size: 16px;
+      }
+      
+      button[type="submit"] {
+        background-color: darkcyan;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px;
+        font-size: 1.2rem;
+        cursor: pointer;
+        margin-top: 20px;
+      }
+    }
+    
+    
+  }
+}
