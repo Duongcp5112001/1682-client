@@ -46,14 +46,13 @@ const LeftBar = (props) => {
     const data = responses.map(response => response.data);
     const dataFinal = data.map(data => data.group)
     setDataGroup(dataFinal);
-    console.log("groups: " + dataFinal);
   };
 
   useEffect(() => {
     setDataMember(props.dataMember);
     getGroupId();
   }, []);
-//
+
   return (
     <div className="leftBar">
       <div className="container">

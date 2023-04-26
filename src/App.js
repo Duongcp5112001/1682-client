@@ -29,6 +29,7 @@ import ManageFb from "./pages/admin/managefeedback/ManageFb";
 import ManageAds from "./pages/admin/manageads/ManageAds";
 import AdminNavbar from "./components/adminNavBar/AdminNavbar";
 import AdminLeft from "./components/adminLeftBar/AdminLeft";
+import Axios from "axios"
 
 function App() {
   const { darkMode } = useContext(DarkModeContext);

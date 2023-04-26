@@ -7,31 +7,35 @@ import Comments from "../comments/Comments";
 import { useEffect, useState } from "react";
 import PostMenu from "../PostMenu";
 import Axios from "axios";
+import Cookies from "js-cookie";
 
 const Post = (props) => {
   const [commentOpen, setCommentOpen] = useState(false); 
   const [postData, setPostData] = useState([]); 
   const [dataMember, setDataMember] = useState({}); 
   const [dataPostsOwner, setDataPostsOwner] = useState({});
+  const token = Cookies.get('token');
   const liked = false;
 
   const getMemberByPosts = async () => {
-    setPostData(props.postData);
-    setDataMember(props.dataMember);
     const response = await Axios.post(
       "https://mystic-network.herokuapp.com/api/member/get-member-by-id",
-      postData.updateBy
+      {
+        memberId: props.postData.updatedBy
+      }
     )
     setDataPostsOwner(response.data.member);
   };
 
   useEffect(() => {
-    getMemberByPosts();
-  }, []);
+    setPostData(props.postData);
+    setDataMember(props.dataMember);
+    getMemberByPosts();    
+  }, [props.postData]);
 
-  const lengthLike = postData.like.length;
-  const lengthDislike = postData.dislike.length;
-  const lengthCmt = postData.comments.length;
+  const lengthLike = props.postData.like.length;
+  const lengthDislike = props.postData.dislike.length;
+  const lengthCmt = props.postData.comments.length;
   const dataCmt = postData.comments;
 
   return (
