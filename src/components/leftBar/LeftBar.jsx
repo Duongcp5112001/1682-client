@@ -1,19 +1,15 @@
 import "./leftBar.scss";
-import Friends from "../../assets/1.png";
-import Groups from "../../assets/2.png";
 import Ads from "../../assets/ads.png";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Axios from "axios";
 import Cookies from "js-cookie";
-import { message } from "antd";
 
 const LeftBar = (props) => {
   const token = Cookies.get('token');
   const [dataMember, setDataMember] = useState({});
-  const [dataGroupMemberId, setDataGroupMemberId] = useState([]);
   const [dataGroup, setDataGroup] = useState([])
-//
+
   const getGroupId = async () => {
     await Axios.get(
       "https://mystic-network.herokuapp.com/api/member/get-group-list",
@@ -23,13 +19,12 @@ const LeftBar = (props) => {
         },
       }
     ).then((response) => {
-      setDataGroupMemberId(response.data.data.data)
+      getGroupData(response.data.data.data);
     })
-    getGroupData();
   };
 
-  const getGroupData = async () => {
-    const groupIds = dataGroupMemberId.map(data => data.groupId);
+  const getGroupData = async (array) => {
+    const groupIds = array.map(data => data.groupId);
 
     const axiosInstance = Axios.create({
       baseURL: 'https://mystic-network.herokuapp.com/api/member',
@@ -52,12 +47,12 @@ const LeftBar = (props) => {
     const dataFinal = data.map(data => data.group)
     setDataGroup(dataFinal);
   };
-//
+
   useEffect(() => {
     setDataMember(props.dataMember);
     getGroupId();
   }, []);
-
+//
   return (
     <div className="leftBar">
       <div className="container">

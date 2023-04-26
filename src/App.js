@@ -3,7 +3,6 @@ import Register from "./pages/register/Register";
 import {
   createBrowserRouter,
   RouterProvider,
-  Route,
   Outlet,
   Navigate,
 } from "react-router-dom";
@@ -23,7 +22,6 @@ import Axios from "axios";
 
 function App() {
   const { darkMode } = useContext(DarkModeContext);
-
   const token = Cookies.get('token');
   const [dataMember, setDataMember] = useState({});
 
@@ -47,26 +45,23 @@ function App() {
   const Layout = (props) => {
     return (
       <div className={`theme-${darkMode ? "dark" : "light"}`}>
-        <Navbar dataMember={props.dataMember} test={'asdasd'}/>
+        <Navbar dataMember={props.dataMember}/>
         <div style={{ display: "flex" }}>
-          <LeftBar dataMember={props.dataMember} />
+          <LeftBar dataMember={props.dataMember}/>
           <div style={{ flex: 6 }}>
             <Outlet />
           </div>
-          <RightBar dataMember={props.dataMember} />
+          <RightBar />
         </div>
       </div>
     );
   };
-
-  
 
   const ProtectedRoute = ({ children }) => {
     const token = Cookies.get('token')
     if (!token) {
       return <Navigate to="/login" />;
     }
-
     return children;
   };
 
@@ -75,7 +70,7 @@ function App() {
       path: "/",
       element: (
         <ProtectedRoute>
-          <Layout dataMember={dataMember} />
+          <Layout dataMember={dataMember}/>
         </ProtectedRoute>
       ),
       children: [
