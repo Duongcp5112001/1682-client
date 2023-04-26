@@ -46,6 +46,7 @@ const LeftBar = (props) => {
     const data = responses.map(response => response.data);
     const dataFinal = data.map(data => data.group)
     setDataGroup(dataFinal);
+    console.log("groups: " + dataFinal);
   };
 
   useEffect(() => {

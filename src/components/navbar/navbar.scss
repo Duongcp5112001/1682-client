@@ -13,6 +13,9 @@
     background-color: themed("bg");
     color:themed("textColor");
     z-index: 999;
+    .messagebutton{
+      color:themed("textColor");
+    }
 
     .left {
       display: flex;

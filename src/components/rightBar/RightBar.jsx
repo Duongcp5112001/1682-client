@@ -49,7 +49,7 @@ const RightBar = (props) => {
   }, []);
 //
   return (
-    <div className="rightBar">
+    <div className="rightBar" style={style}>
       <div className="container">
         <div className="item">
           <span>Suggestions</span>

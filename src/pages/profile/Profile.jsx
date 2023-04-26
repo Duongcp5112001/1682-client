@@ -8,6 +8,7 @@ import Axios from "axios";
 import Cookies from "js-cookie";
 import { message } from "antd";
 import { decodeToken } from "react-jwt";
+import Share from "../../components/share/Share"
 
 const Profile = () => {
   const token = Cookies.get('token');
@@ -73,6 +74,7 @@ const Profile = () => {
             <MoreVertIcon /> 
           </div>
         </div>
+      <Share/>
       <Posts/>
       </div>
     </div>

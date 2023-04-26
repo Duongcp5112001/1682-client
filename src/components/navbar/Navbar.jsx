@@ -51,7 +51,17 @@ const Navbar = (props) => {
             <Clock />
           </div>
         </div>
-        <MessageOutlined style={{ fontSize: "25px" }} />
+
+        <Link
+          to="/message"
+          style={{
+            textDecoration: "none",
+            justifyContent: "center",
+            display: "flex",
+          }}
+        >
+          <MessageOutlined className="messagebutton" style={{ fontSize: "23px", cursor: "pointer", textDecoration:"none" }} />
+        </Link>
         <NotificationsOutlinedIcon style={{ fontSize: "30px" }} />
         <div className="user">
           <ProfileMenu dataMember={props.dataMember} />
