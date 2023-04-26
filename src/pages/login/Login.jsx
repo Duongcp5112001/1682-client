@@ -57,7 +57,7 @@ const Login = () => {
                     Cookies.set('token', response.data.access_token)
                     if (Cookies.get('token')) {
                         if (response.data.member.role === 'ADMIN') {
-                            navigate('/admin-page');
+                            navigate('/dashboard');
                         } else {
                             navigate('/');
                         }

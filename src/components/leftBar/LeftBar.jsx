@@ -92,19 +92,6 @@ const LeftBar = () => {
               <span>{dataMember.username}</span>
             </Link>
           </div>
-          <div className="user">
-            <Link to="/dashboard" style={{
-              textDecoration: "none",
-              color: "inherit",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: "10px",
-            }}>
-              <img src="" alt="" />
-              <span>Dashboard</span>
-            </Link>
-          </div>
         </div>
         <hr />
         {dataGroup !== [] ? (

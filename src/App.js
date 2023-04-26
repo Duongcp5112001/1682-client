@@ -23,23 +23,19 @@ import Friends from "./pages/friend/Friends";
 import EditProf from "./pages/editProfile/EditProfile";
 import Cookies from "js-cookie";
 import Message from "./pages/message/Message";
-import Dashboard from "./pages/dashboard/Dashboard";
+import Dashboard from "./pages/admin/dashboard/Dashboard";
+import AdminPage from "./pages/admin/Admin";
+import ManageUser from "./pages/admin/manageuser/ManageUser";
+import ManagePost from "./pages/admin/managepost/ManagePost";
+import ManageFb from "./pages/admin/managefeedback/ManageFb";
+import ManageAds from "./pages/admin/manageads/ManageAds";
+import AdminNavbar from "./components/adminNavBar/AdminNavbar";
+import AdminLeft from "./components/adminLeftBar/AdminLeft";
 
 function App() {
   const { darkMode } = useContext(DarkModeContext);
 
   const Layout = () => {
-    const location = useLocation();
-    const [style, setStyle] = useState({});
-    useEffect(() => {
-      const dashboard = document.getElementById("dashboard");
-
-      if (dashboard) {
-        setStyle(() => ({ display: "none" }));
-      } else {
-        setStyle(() => ({}));
-      }
-    }, [location.pathname]);
     return (
       <div className={`theme-${darkMode ? "dark" : "light"}`}>
         <Navbar />
@@ -48,7 +44,20 @@ function App() {
           <div style={{ flex: 6 }}>
             <Outlet />
           </div>
-          <RightBar style={style} />
+          <RightBar />
+        </div>
+      </div>
+    );
+  };
+  const AdminLayout = () => {
+    return (
+      <div className={`theme-${darkMode ? "dark" : "light"}`}>
+        <AdminNavbar />
+        <div style={{ display: "flex" }}>
+          <AdminLeft />
+          <div style={{ flex: 8 }}>
+            <Dashboard/>
+          </div>
         </div>
       </div>
     );
@@ -96,11 +105,33 @@ function App() {
           path: "/group/:id",
           element: <Group />,
         },
-        {
-          path: "/dashboard",
-          element: <Dashboard />,
-        },
       ],
+    },
+    {
+      path: "/admin",
+      element:(
+        <ProtectedRoute>
+          <AdminLayout />
+        </ProtectedRoute>
+      ),
+      children: [
+        {
+          path: "/admin/manageuser",
+          element: <ManageUser />,
+        },
+        {
+          path: "/admin/managepost",
+          element: <ManagePost />,
+        },
+        {
+          path: "/admin/managefb",
+          element: <ManageFb />,
+        },
+        {
+          path: "/admin/manageads",
+          element: <ManageAds />,
+        },
+      ]
     },
     {
       path: "/login",
