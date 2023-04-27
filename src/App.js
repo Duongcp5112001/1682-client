@@ -37,16 +37,15 @@ function App() {
   const [dataMember, setDataMember] = useState({});
 
   const getDataMember = async () => {
-    await Axios.get(
+    const response = await Axios.get(
       "https://mystic-network.herokuapp.com/api/member/get-profile",
       {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       }
-    ).then((response) => {
-      setDataMember(response.data.member)
-    })
+    )
+    setDataMember(response.data.member)
   };
 
   useEffect(() => {

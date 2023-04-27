@@ -6,9 +6,10 @@ const Home = (props) => {
   return (
     <div className="home">
       <Share dataMember={props.dataMember}/>
-      <Posts dataMember={props.dataMember}/>
+      <Posts dataMember={props.dataMember} namePage={"home"}/>
     </div>
   )
+  
 }
 
 export default Home

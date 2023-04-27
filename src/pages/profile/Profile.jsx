@@ -15,14 +15,16 @@ const Profile = () => {
   const decodedToken = decodeToken(token);
   const [dataMember, setDataMember] = useState({});
   const [checkProfile, setCheckProfile] = useState(true);
+  const [paramId, setParamId] = useState("")
+  const [memberId, setMemberId] = useState("")
 
-  const { memberId } = useParams();
+  const url = new URL(window.location.href);
 
   const getDataMember = async () => {
     try {
-      const url = new URL(window.location.href);
       const memberId = url.pathname.split('/')[2];
-
+      setMemberId(memberId);
+      setParamId(memberId);
       await Axios.get(
         `https://mystic-network.herokuapp.com/api/profile/${memberId}`
       )
@@ -34,12 +36,14 @@ const Profile = () => {
     }
   };
 
+  
+
   useEffect(() => {
-    getDataMember();
-    if (String(decodedToken.id) === dataMember._id) {
+    if (String(decodedToken.id) === memberId) {
       setCheckProfile(false)
     }
-  }, []);
+    getDataMember();
+  }, [memberId]);
 
   return (
     <div className="profile">
@@ -74,8 +78,8 @@ const Profile = () => {
             <MoreVertIcon /> 
           </div>
         </div>
-      <Share/>
-      <Posts/>
+      <Share dataMember={dataMember}/>
+      <Posts dataMember={dataMember} namePage={"profile"} paramId={paramId}/>
       </div>
     </div>
   );
