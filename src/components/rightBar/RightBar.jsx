@@ -10,7 +10,7 @@ const RightBar = (props) => {
 
   const getFriendId = async () => {
     const response = await Axios.get(
-      "https://mystic-network.herokuapp.com/api/member/get-friend-list",
+      "https://mystery-social-7f4a4cc480b5.herokuapp.com/api/member/get-friend-list",
       {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -24,7 +24,7 @@ const RightBar = (props) => {
     const friendIds = array.map(data => data.friendId);
 
     const axiosInstance = Axios.create({
-      baseURL: 'https://mystic-network.herokuapp.com/api/member',
+      baseURL: 'https://mystery-social-7f4a4cc480b5.herokuapp.com/api/member',
     });
     
     axiosInstance.interceptors.request.use(

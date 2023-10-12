@@ -12,7 +12,7 @@ const LeftBar = (props) => {
 
   const getGroupId = async () => {
     await Axios.get(
-      "https://mystic-network.herokuapp.com/api/member/get-group-list",
+      "https://mystery-social-7f4a4cc480b5.herokuapp.com/api/member/get-group-list",
       {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -27,7 +27,7 @@ const LeftBar = (props) => {
     const groupIds = array.map(data => data.groupId);
 
     const axiosInstance = Axios.create({
-      baseURL: 'https://mystic-network.herokuapp.com/api/member',
+      baseURL: 'https://mystery-social-7f4a4cc480b5.herokuapp.com/api/member',
     });
     
     axiosInstance.interceptors.request.use(

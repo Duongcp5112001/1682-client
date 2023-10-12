@@ -17,7 +17,7 @@ const PostMenu =() =>{
 
     const logoutEvent = async (e) => {
         await Axios.post( 
-            'https://mystic-network.herokuapp.com/api/logout'
+            'https://mystery-social-7f4a4cc480b5.herokuapp.com/api/logout'
         ).then((response) => {
             Cookies.remove('token')
             navigate('/login')

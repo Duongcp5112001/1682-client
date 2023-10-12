@@ -50,7 +50,7 @@ const Login = () => {
                 password: passWord
             };
             await Axios.post( 
-                'https://mystic-network.herokuapp.com/api/login', 
+                'https://mystery-social-7f4a4cc480b5.herokuapp.com/api/login', 
                 formData,
               ).then((response) => {
                 if (response.data.access_token) {
@@ -76,7 +76,7 @@ const Login = () => {
                 username: userName1
             };
             await Axios.post( 
-                'https://mystic-network.herokuapp.com/api/login-no-password', 
+                'https://mystery-social-7f4a4cc480b5.herokuapp.com/api/login-no-password', 
                 formData
               ).then((response) => {
                 if (response.data.access_token) {

@@ -32,7 +32,7 @@ const Share = (props) => {
 
   const createPost = async () => {
     const response = await Axios.post(
-      "https://mystic-network.herokuapp.com/api/member/create-posts",
+      "https://mystery-social-7f4a4cc480b5.herokuapp.com/api/member/create-posts",
       {
         headers: {
           Authorization: `Bearer ${token}`,

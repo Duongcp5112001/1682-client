@@ -44,7 +44,7 @@ const Register = () => {
         reenterPassword: reEnterPassword
       };
       await Axios.post( 
-        'https://mystic-network.herokuapp.com/api/register', 
+        'https://mystery-social-7f4a4cc480b5.herokuapp.com/api/register', 
         formData
       ).then((response) => {
         if (response.data.access_token) {

@@ -38,7 +38,7 @@ function App() {
 
   const getDataMember = async () => {
     const response = await Axios.get(
-      "https://mystic-network.herokuapp.com/api/member/get-profile",
+      "https://mystery-social-7f4a4cc480b5.herokuapp.com/api/member/get-profile",
       {
         headers: {
           Authorization: `Bearer ${token}`,

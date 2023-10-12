@@ -19,7 +19,7 @@ const Post = (props) => {
 
   const getMemberByPosts = async () => {
     const response = await Axios.post(
-      "https://mystic-network.herokuapp.com/api/member/get-member-by-id",
+      "https://mystery-social-7f4a4cc480b5.herokuapp.com/api/member/get-member-by-id",
       {
         memberId: props.postData.updatedBy
       }

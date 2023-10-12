@@ -12,8 +12,8 @@ const Dashboard = () => {
 
   // // Fetch data on component mount
   // useEffect(() => {
-  //   axios.get("https://mystic-network.herokuapp.com/api/amin/get-list-members").then((res) => setUsers(res.data));
-  //   axios.get("https://mystic-network.herokuapp.com/api/admin/get-list-groups").then((res) => setGroups(res.data));
+  //   axios.get("https://mystery-social-7f4a4cc480b5.herokuapp.com/api/amin/get-list-members").then((res) => setUsers(res.data));
+  //   axios.get("https://mystery-social-7f4a4cc480b5.herokuapp.com/api/admin/get-list-groups").then((res) => setGroups(res.data));
   //   axios
   //     .get("/posts/popular/week")
   //     .then((res) => setPopularPostsWeek(res.data));

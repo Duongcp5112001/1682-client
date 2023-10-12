@@ -26,7 +26,7 @@ const Profile = () => {
       setMemberId(memberId);
       setParamId(memberId);
       await Axios.get(
-        `https://mystic-network.herokuapp.com/api/profile/${memberId}`
+        `https://mystery-social-7f4a4cc480b5.herokuapp.com/api/profile/${memberId}`
       )
         .then((response) => {
           setDataMember(response.data.member);

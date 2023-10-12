@@ -19,7 +19,7 @@ const ProfileMenu = (props) => {
     if (e.key === "logout") {
       try {
         Axios.post(
-          "https://mystic-network.herokuapp.com/api/logout",
+          "https://mystery-social-7f4a4cc480b5.herokuapp.com/api/logout",
         );
       } catch (error) {
         message.error(error);

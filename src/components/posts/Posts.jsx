@@ -8,14 +8,14 @@ const Posts = (props) => {
 
   const getPostDataHome = async () => {
     const response = await Axios.get(
-      "https://mystic-network.herokuapp.com/api/member/get-posts",
+      "https://mystery-social-7f4a4cc480b5.herokuapp.com/api/member/get-posts",
     );
     setDataPosts(response.data.data)
   };
 
   const getPostDataProfile = async () => {
     const response = await Axios.post(
-      "https://mystic-network.herokuapp.com/api/member/get-post-by-member-id",
+      "https://mystery-social-7f4a4cc480b5.herokuapp.com/api/member/get-post-by-member-id",
       {
         memberId: "644533d7a49e66001432b5a4"
       }
